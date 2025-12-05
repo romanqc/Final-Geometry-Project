@@ -511,6 +511,26 @@
                             modern photography, computer vision, and computer graphics.
                         </p>
                     </div>
+
+                    <!-- Interactive 3D Demonstration -->
+                    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 2rem;">
+                        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-blue); margin-bottom: 1.5rem; text-align: center;">
+                            Processing 3D Sketch
+                        </h3>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="canvas-container" id="canvas-4" style="width: 100%; max-width: 800px; height: 600px; margin-bottom: 1rem;"></div>
+                            <button class="fullscreen-btn" data-canvas="4" style="margin-bottom: 1rem;">⛶ Fullscreen</button>
+                            <p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic; text-align: center; max-width: 700px;">
+                                Press <strong>T</strong> to toggle between projection types • Drag to rotate the camera • Scroll to zoom<br/>
+                                <strong>Yellow point O:</strong> pinhole (center of projection) • 
+                                <strong>Blue shape:</strong> geometric perspective projection on the film plane • 
+                                <strong>Orange shape:</strong> intrinsic projection using focal length and principal point offset • 
+                                <strong>Green shape:</strong> orthographic projection (parallel rays, no perspective) • 
+                                <strong>Yellow square:</strong> light source at infinity indicating orthographic rays
+                            </p>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
