@@ -774,17 +774,41 @@
                                 <p>where \(d\) is the total depth of the camera housing.</p>
                                 
                                 <h4>Perspective Division</h4>
-                                <p>The projection exhibits the characteristic perspective effect where projected coordinates are inversely proportional to depth:</p>
+                                <p>To project a 3D point onto the film plane, we trace a ray from the pinhole 
+                                \(P_{\text{pinhole}}\) through the world point. This ray intersects the film plane 
+                                at a point \(V\). The projection is simply a scaled interpolation from the pinhole 
+                                to this intersection. </p>
+
                                 <div class="equation">
                                     \[
-                                    \begin{aligned}
-                                    Y_{\text{projected}} &= \frac{X_{\text{film}} - P_x}{V_x - P_x} \cdot V_y \\
-                                    Z_{\text{projected}} &= \frac{X_{\text{film}} - P_x}{V_x - P_x} \cdot V_z
-                                    \end{aligned}
+                                        \begin{aligned}
+                                        Y_{\text{projected}} &= 
+                                        \frac{X_{\text{film}} - P_x}{V_x - P_x}\; V_y \\[6pt]
+                                        Z_{\text{projected}} &= 
+                                        \frac{X_{\text{film}} - P_x}{V_x - P_x}\; V_z
+                                        \end{aligned}
                                     \]
                                 </div>
-                                
-                                <p class="note"><strong>Foreshortening Effect:</strong> Objects farther from the pinhole appear smaller. This is the fundamental principle behind perspective projection.</p>
+
+                                <p>Here: </p>
+
+                                <ul>
+                                    <li>\(P = (P_x, 0, 0)\) is the pinhole position.</li>
+                                    <li>\(X_{\text{film}}\) is the \(x\)-location of the film plane.</li>
+                                    <li>\(V = (V_x, V_y, V_z)\) is the <em>intersection of the ray from \(P\) through the world point with the film plane</em>.</li>
+                                </ul>
+
+                                <p>
+                                    The factor 
+                                    \[
+                                    \frac{X_{\text{film}} - P_x}{V_x - P_x}
+                                    \]
+                                    is the perspective scale: points farther from the pinhole (larger depth) are scaled down more, creating the visual foreshortening effect characteristic of perspective imaging.
+                                </p>
+
+                                <p class="note">
+                                    <strong>Foreshortening Effect:</strong> As depth increases, the projection shrinks. This nonlinear scaling is exactly what produces perspective.
+                                </p>
                                 
                                 <h4>Film Bounds Clamping</h4>
                                 <p>Projected points are constrained to the film rectangle:</p>
